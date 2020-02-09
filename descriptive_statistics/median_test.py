@@ -1,4 +1,9 @@
-from median import get_median, get_median_freq_dist, create_cumulative_frequency, get_final_cumulative_frequency
+from median import (
+    get_median,
+    get_median_freq_dist,
+    create_cumulative_frequency,
+    get_final_cumulative_frequency,
+)
 
 
 def test_median_freq_dist():
@@ -53,6 +58,7 @@ def test_cumulative_freq():
 
     assert create_cumulative_frequency(test_data) == expected_data
 
+
 def test_get_final_cumulative_frequency():
     test_data = [
         {"lower": 20, "upper": 24, "freq": 1, "CF": 1},
@@ -69,7 +75,11 @@ def test_get_final_cumulative_frequency():
         {"lower": 75, "upper": 79, "freq": 2, "CF": 45},
     ]
 
-    assert get_final_cumulative_frequency(items=test_data, number_of_cases=45, index=6) == 5
+    assert (
+        get_final_cumulative_frequency(items=test_data, number_of_cases=45, index=6)
+        == 5
+    )
+
 
 def basic_test():
     assert get_median([5, 7, 4, 8, 15, 12, 2, 22, 18]) == 8

@@ -24,11 +24,13 @@ def get_median(items=[]):
         index = int(n + 1) / 2
         return items[int(index) - 1]
 
+
 def get_total_number_of_cases(items=[{}]):
     total = 0
     for item in items:
-        total = total + item['freq']
+        total = total + item["freq"]
     return total
+
 
 def create_cumulative_frequency(items=[{}]):
     for index, item in enumerate(items):
@@ -52,7 +54,7 @@ def get_median_freq_dist(data=[{}], interval=0):
     number_of_cases = get_total_number_of_cases(data)
     rounded_mean = round(mean)
     median_class = get_class_index(data, rounded_mean)
-    median = mean + (((number_of_cases/2) - 21) / 7) * interval
+    median = mean + (((number_of_cases / 2) - 21) / 7) * interval
     return median
 
 
@@ -65,12 +67,9 @@ def get_class_index(items=[{}], mean=None):
 
 def get_final_cumulative_frequency(items=[{}], number_of_cases=0, index=0):
     boundary = round(number_of_cases / 2)
-    while(index != 0):
-        if  items[index]["CF"] < boundary and boundary >= items[index]["CF"]:
+    while index != 0:
+        if items[index]["CF"] < boundary and boundary >= items[index]["CF"]:
             return index
         else:
             index = index - 1
     return None
-
-
-
