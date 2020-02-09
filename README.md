@@ -5,13 +5,13 @@ A compilation of programs for my Industrial Statistics class
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ### Todo:
- [ ] MEASURES OF CENTRAL TENDENCY AND LOCATION
- [ ] MEASURES OF VARIABILITY
- [ ] TEST OF DIFFERENCE BETWEEN MEANS
- [ ] ANALYSIS OF VARIANCE
- [ ] TESTS OF RELATIONSHIP
- [ ] LINEAR REGRESSION
- [ ] CHI-SQUARE TEST
+ - [ ] MEASURES OF CENTRAL TENDENCY AND LOCATION
+ - [ ] MEASURES OF VARIABILITY
+ - [ ] TEST OF DIFFERENCE BETWEEN MEANS
+ - [ ] ANALYSIS OF VARIANCE
+ - [ ] TESTS OF RELATIONSHIP
+ - [ ] LINEAR REGRESSION
+ - [ ] CHI-SQUARE TEST
  
 ### License
 
