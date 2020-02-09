@@ -14,4 +14,4 @@
 
 
 def determine_sample_size(population_size, margin_of_error):
-    return population_size / (1 + (population_size * margin_of_error) ** 2)
+    return population_size / (1 + (population_size * (margin_of_error ** 2)))
