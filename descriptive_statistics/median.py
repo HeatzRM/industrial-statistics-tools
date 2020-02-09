@@ -25,4 +25,4 @@ def get_median(items=[]):
         return median
     else:
         index = int(n + 1) / 2
-        return items[int(index) + 1]
+        return items[int(index)-1]
