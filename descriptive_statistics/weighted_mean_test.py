@@ -1,7 +1,7 @@
 from weighted_mean import get_weighted_mean
 
 
-def test():
+def basic_test():
     assert (
         get_weighted_mean(
             [
@@ -13,4 +13,20 @@ def test():
             ]
         )
         == 5.1
+    )
+
+    assert (
+        round(
+            get_weighted_mean(
+                [
+                    {"score": 5, "freq": 12},
+                    {"score": 4, "freq": 16},
+                    {"score": 3, "freq": 2},
+                    {"score": 2, "freq": 0},
+                    {"score": 1, "freq": 0},
+                ]
+            ),
+            2,
+        )
+        == 4.33
     )
