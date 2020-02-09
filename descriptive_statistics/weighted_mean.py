@@ -16,6 +16,6 @@ def get_weighted_mean(items=[{}]):
     total_freq = 0
     total = 0
     for item in items:
-        total = total + (item['score'] * item['freq'])
-        total_freq = total_freq + item['freq']
+        total = total + (item["score"] * item["freq"])
+        total_freq = total_freq + item["freq"]
     return total / total_freq
