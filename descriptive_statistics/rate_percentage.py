@@ -1,4 +1,4 @@
-'''
+"""
     We use frequency count to show the number of respondents
     belonging to a certain category and the percentage to
     show the proportions of respondents belonging to that category
@@ -8,7 +8,8 @@
 
     Formula:
         percentage(%) = (frequency / total_number_of_cases) * 100
-'''
+"""
+
 
 def get_percentage(frequency=0, total_number_of_cases=1):
     return (frequency / total_number_of_cases) * 100
