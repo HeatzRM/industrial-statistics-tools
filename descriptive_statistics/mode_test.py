@@ -17,7 +17,7 @@ def test_freq_dist():
         {"lower": 75, "upper": 79, "freq": 2},
     ]
 
-    assert round(mode_freq_dist(test_data), 2) == 51.17
+    assert round(mode_freq_dist(test_data, 5), 2) == 51.17
 
 
 def test():

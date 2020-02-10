@@ -1,5 +1,4 @@
 from collections import Counter
-from mean import get_mean
 from median import get_class_index
 
 
@@ -32,10 +31,11 @@ def get_mode_ungrouped(list_of_numbers):
 
 
 def mode_freq_dist(data=[{}], interval=0):
-    mean = get_mean(items=[data[0]["lower"], data[-1]["upper"]])
-    rounded_mean = round(mean)
-    median_class = get_class_index(data, rounded_mean)
+    mode_class = get_class_index(data)
 
-    Lb = mean
-    d1 = data[median_class]["freq"] - data[median_class - 1]["freq"]
-    d2 = data[median_class]["freq"] - data[median_class + 1]["freq"]
+    Lb = data[mode_class]["lower"] - 0.5
+    d1 = data[mode_class]["freq"] - data[mode_class - 1]["freq"]
+    d2 = data[mode_class]["freq"] - data[mode_class + 1]["freq"]
+
+    mode = Lb + (d1 / (d1 + d2)) * interval
+    return mode
