@@ -50,19 +50,30 @@ def get_median_freq_dist(data=[{}], interval=0):
     median = lower_bound + (((number_of_cases/2) - cumulative_frequency) / frequency) *  interval
     """
     data = create_cumulative_frequency(data)
-    mean = get_mean(items=[data[0]["lower"], data[-1]["upper"]])
+
     number_of_cases = get_total_number_of_cases(data)
-    rounded_mean = round(mean)
-    median_class = get_class_index(data, rounded_mean)
-    median = mean + (((number_of_cases / 2) - 21) / 7) * interval
+
+    median_class_index = get_class_index(data)
+
+    lower_boundary = data[median_class_index]["lower"] - 0.5
+    final_cumulative_frequency_index = get_final_cumulative_frequency(
+        items=data, number_of_cases=number_of_cases, index=median_class_index
+    )
+
+    median = (
+        lower_boundary
+        + (
+            (((number_of_cases / 2) - data[final_cumulative_frequency_index]["CF"]))
+            / data[median_class_index]["freq"]
+        )
+        * interval
+    )
+
     return median
 
 
-def get_class_index(items=[{}], mean=None):
-    for index, item in enumerate(items):
-        if mean >= item["lower"] or mean <= item["upper"]:
-            return index
-    return None
+def get_class_index(items=[{}]):
+    return items.index(max(items, key=lambda item: item["freq"]))
 
 
 def get_final_cumulative_frequency(items=[{}], number_of_cases=0, index=0):
